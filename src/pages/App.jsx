@@ -2,9 +2,8 @@ import '@styles/App.css'
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-
-const Page1 = () => <h1>1페이지입니다.</h1>
-const Page2 = () => <h1>2페이지입니다.</h1>
+import Page1 from "@pages/Page1.jsx"
+import Page2 from "@pages/Page2.jsx"
 
 function App() {
   const router = createBrowserRouter([
