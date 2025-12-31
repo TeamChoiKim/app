@@ -2,14 +2,14 @@ import { useNavigate } from 'react-router'
 
 const Page1 = () => {
     const navigate = useNavigate();
-    const onclickp2 = (data) => {
+    const onclickp2 = data => {
         navigate( 'page2', {state: data} );
     }
     const arr = [
     {   "name" : "스티븐" , "email" : "jobs@shellfolder.com" , "regDate" : "2023-02-28", "pwd" : "1", "gender" :true},
     {   "name" : "에브릴" , "email" : "lavigne@shellfolder.com" , "regDate" : "2023-02-27", "pwd" : "2", "gender" :false}
     ];
-    
+
     const styles = {
         "cursor" : "pointer"
     }

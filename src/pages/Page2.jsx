@@ -15,7 +15,7 @@ const Page2 = () => {
     useEffect(()=>{
         if(location.state === null) return onclickmain()
         setData(location.state)
-    }, [])
+    })
 
     return (
         <div className="container mt-3">
