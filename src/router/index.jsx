@@ -21,7 +21,7 @@ const Router = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Page1 />} />
-          <Route path="/2" element={<Page2 />} />
+          <Route path="/page2" element={<Page2 />} />
         </Routes>
       </BrowserRouter>,
     </>
