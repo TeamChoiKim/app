@@ -1,23 +1,21 @@
-import { useNavigate } from 'react-router'
+import { useEffect, useState } from 'react'
+import { useNavigate, useLocation } from 'react-router'
 
 const Page2 = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const onclickmain = () => {
         navigate("/");
     }
     const onclickp3 = () => {
         navigate("/page3");
     }
-    const arr = [
-    {   "name" : "스티븐" , "email" : "jobs@shellfolder.com" , "regDate" : "2023-02-28", "pwd" : "1" , "gender" : true },
-    {   "name" : "에브릴" , "email" : "lavigne@shellfolder.com" , "regDate" : "2023-02-27", "pwd" : "1" , "gender" : true }
-    ];
-    const data = {
-        "name" : arr[0].name ,
-        "email" : arr[0].email ,
-        "pwd" : arr[0].pwd ,
-        "gender" : arr[0].gender 
-    }
+    const [data, setData] = useState({name: "", email: "", pwd: "", gender: true})
+
+    useEffect(()=>{
+        if(location.state === null) return onclickmain()
+        setData(location.state)
+    }, [])
 
     return (
         <div className="container mt-3">

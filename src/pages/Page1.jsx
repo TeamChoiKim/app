@@ -1,16 +1,15 @@
 import { useNavigate } from 'react-router'
 
-
-
 const Page1 = () => {
     const navigate = useNavigate();
-    const onclick = () => {
-        navigate("page2");
+    const onclickp2 = (data) => {
+        navigate( 'page2', {state: data} );
     }
     const arr = [
-    {   "name" : "스티븐" , "email" : "jobs@shellfolder.com" , "regDate" : "2023-02-28"},
-    {   "name" : "에브릴" , "email" : "lavigne@shellfolder.com" , "regDate" : "2023-02-27"}
+    {   "name" : "스티븐" , "email" : "jobs@shellfolder.com" , "regDate" : "2023-02-28", "pwd" : "1", "gender" :true},
+    {   "name" : "에브릴" , "email" : "lavigne@shellfolder.com" , "regDate" : "2023-02-27", "pwd" : "2", "gender" :false}
     ];
+    
     const styles = {
         "cursor" : "pointer"
     }
@@ -34,12 +33,13 @@ const Page1 = () => {
             {
                 arr.map((v,i) => {
                     return (
-                        <tr style={styles} onClick={onclick} key={i}>
+                        <tr style={styles} onClick={() => onclickp2(v)} key={i}>
                             <td>{ v.name }</td>
                             <td>{ v.email }</td>
                             <td>{ v.regDate }</td>
                         </tr>
                     )
+
                 })
             }
 
